@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Topbar.scss';
+import '../styles/components/Topbar.scss';
 
 function Topbar() {
   return (
