@@ -1,6 +1,7 @@
 .home {
+	max-width: 100vmax;
 	height: 100%;
-	top: 13vh;
+	top: 15vh;
 	position: relative;
 
 	&__list{
@@ -28,5 +29,21 @@
 		z-index: 0;
 	}
 
-
+	&__slider {
+    display: block;
+    height: 293px;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+	  position: relative;
+	 }
+	&__slider li {
+    position: absolute;
+	 }
+	&__slider--img {
+    margin: auto;
+    height: 400px;
+    width: 400px;
+    vertical-align: top;
+	}
 }

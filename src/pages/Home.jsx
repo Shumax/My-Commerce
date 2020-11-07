@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-const-assign */
 import React from 'react';
 
 import '../styles/pages/Home.scss';
@@ -8,7 +11,27 @@ import croquiFour from '../images/croqui-4.jpg';
 import Topbar from '../components/Topbar';
 import Footer from '../components/Footer';
 
+function carousel() {
+  let myIndex = 0;
+
+  let i;
+  const x = document.getElementsByClassName('home__slider--img');
+
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = 'none';
+  }
+
+  myIndex++;
+  if (myIndex > x.length) {
+    myIndex = 1;
+  }
+
+  x[myIndex - 1].style.display = 'block';
+
+  setTimeout(carousel, 2000);
+}
 function Home() {
+  carousel();
   return (
     <>
       <Topbar />
@@ -22,19 +45,17 @@ function Home() {
           </ul>
         </nav>
 
-        <ul className="home_slider">
+        <ul className="home__slider">
           <li>
-            <img alt="" src={croqui} />
+            <img className="home__slider--img" alt="" src={croqui} />
           </li>
           <li>
-            <img alt="" src={croquiTree} />
+            <img className="home__slider--img" alt="" src={croquiTree} />
           </li>
           <li>
-            <img alt="" src={croquiFour} />
+            <img className="home__slider--img" alt="" src={croquiFour} />
           </li>
-
         </ul>
-
         <Footer />
       </div>
     </>
