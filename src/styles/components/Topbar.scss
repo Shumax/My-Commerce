@@ -20,4 +20,43 @@
 	&__logo {
 		height: 100%;
 	}
+
+	&__search {
+		background: #fff;
+		width: 50vh;
+		height: 5vh;
+		border: 1px solid #8F8A9B;
+		border-radius: 3px;
+		padding: 1vh;
+		
+		& svg {
+			color: #01060e;
+			font-weight: 700;
+			position: absolute;
+			opacity: .7;
+		}
+		& input {
+			width: 80%;
+			border: none;
+			position: relative;
+			left: 28px;
+		}
+		& input:focus {
+			box-shadow: 0 0 0 0;
+			border: 0 none;
+			outline: 0;
+		}  
+	}
+
+	&__icons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		& svg {
+			margin: 5%;
+		}
+	}
+
+
 }

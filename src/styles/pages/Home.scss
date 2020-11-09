@@ -1,7 +1,7 @@
 .home {
 	max-width: 100vmax;
 	height: 100%;
-	top: 15vh;
+	top: 95px;
 	position: relative;
 
 	&__list{
@@ -24,26 +24,28 @@
 		}
 	}
 	.container {
-		border-bottom: 1px solid var(--blackLighter);
+		border-bottom: .13rem solid #01060e;
 		position: relative;
 		z-index: 0;
 	}
 
-	&__slider {
-    display: block;
-    height: 293px;
-    width: 600px;
-    margin: 0 auto;
-    margin-top: 20px;
-	  position: relative;
-	 }
-	&__slider li {
-    position: absolute;
-	 }
-	&__slider--img {
-    margin: auto;
-    height: 400px;
-    width: 400px;
-    vertical-align: top;
+	&__banner {
+		margin: 2px auto;
+		width: 100%;
+		max-height: 370px;
+		background-color: white;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		
+	}
+	
+	@media screen and (max-height: 100vh) {
+		&__banner {
+			height: auto;
+		}
+
 	}
 }

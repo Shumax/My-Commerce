@@ -4,34 +4,12 @@
 import React from 'react';
 
 import '../styles/pages/Home.scss';
-import croqui from '../images/croqui-2.jpg';
-import croquiTree from '../images/croqui-3.jpg';
-import croquiFour from '../images/croqui-4.jpg';
+import banner from '../images/banner.png';
 
 import Topbar from '../components/Topbar';
 import Footer from '../components/Footer';
 
-function carousel() {
-  let myIndex = 0;
-
-  let i;
-  const x = document.getElementsByClassName('home__slider--img');
-
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = 'none';
-  }
-
-  myIndex++;
-  if (myIndex > x.length) {
-    myIndex = 1;
-  }
-
-  x[myIndex - 1].style.display = 'block';
-
-  setTimeout(carousel, 2000);
-}
 function Home() {
-  carousel();
   return (
     <>
       <Topbar />
@@ -45,17 +23,10 @@ function Home() {
           </ul>
         </nav>
 
-        <ul className="home__slider">
-          <li>
-            <img className="home__slider--img" alt="" src={croqui} />
-          </li>
-          <li>
-            <img className="home__slider--img" alt="" src={croquiTree} />
-          </li>
-          <li>
-            <img className="home__slider--img" alt="" src={croquiFour} />
-          </li>
-        </ul>
+        <div className="home__banner">
+          <img alt="banner" src={banner} />
+        </div>
+
         <Footer />
       </div>
     </>
