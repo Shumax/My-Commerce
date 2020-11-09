@@ -7,7 +7,6 @@
 	background-color: black;
 	
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
 	position: fixed;
@@ -18,7 +17,8 @@
 	padding-right: 1%;
 	
 	&__logo {
-		height: 100%;
+		height: auto;
+		max-height: 94px;
 	}
 
 	&__search {
@@ -27,7 +27,7 @@
 		height: 5vh;
 		border: 1px solid #8F8A9B;
 		border-radius: 3px;
-		padding: 1vh;
+		padding: 3px;
 		
 		& svg {
 			color: #01060e;
