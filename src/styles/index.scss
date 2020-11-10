@@ -32,18 +32,19 @@ a {
 	height: 100%;
 
 	& svg {
-		font-size: 25px;
+		font-size: 22px;
 	}
 }
 
 .container {
   width: 100%;
-  margin: 0 auto;
+	margin: 0 auto;
+	justify-content: center;
 }
 
 @media screen and (min-width: 100vh) {
   .container {
-    width: 99vmax;
+    width: 100%;
   }
 }
 

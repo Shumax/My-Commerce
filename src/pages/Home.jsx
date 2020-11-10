@@ -1,10 +1,11 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-const-assign */
 import React from 'react';
 
 import '../styles/pages/Home.scss';
-import banner from '../images/banner.png';
+import banner from '../images/banner.webp';
 
 import Topbar from '../components/Topbar';
 import Footer from '../components/Footer';
@@ -16,15 +17,23 @@ function Home() {
       <div className="home">
         <nav className="container">
           <ul className="home__list">
-            <li className="home__list--item">T-Shirts</li>
-            <li className="home__list--item">Pants</li>
-            <li className="home__list--item">Shoes</li>
-            <li className="home__list--item">Bags</li>
+            <li className="home__list--item">Camisetas</li>
+            <li className="home__list--item">Calças</li>
+            <li className="home__list--item">Tênis</li>
+            <li className="home__list--item">Bolsas</li>
           </ul>
         </nav>
 
         <div className="home__banner">
           <img alt="banner" src={banner} />
+        </div>
+
+        <div className="home__promo">
+          <p>Até 15% Off!</p>
+
+          <button>
+            Aproveite
+          </button>
         </div>
 
         <Footer />

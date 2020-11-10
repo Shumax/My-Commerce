@@ -12,7 +12,7 @@
 
 		&--item {
 			font-size: 18px;
-			opacity: .5;
+			opacity: .7;
 			text-align: center;
 			margin: auto 3% auto 3%;
 			width: 80px;
@@ -38,14 +38,45 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		
-		
 	}
 	
 	@media screen and (max-height: 100vh) {
 		&__banner {
 			height: auto;
 		}
+	}
 
+	&__promo {
+		position: relative;
+		margin-top: 5%;
+		margin-left: 40%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		& p {
+			font-size: 30px;
+			font-weight: 800;
+			color: #B22222;
+			opacity: .95;
+			margin-bottom: 8px;
+		}
+
+
+		& button {
+			position: relative;
+			font-size: 25px;
+			color: #01060e;
+			border: none;
+			cursor: pointer;
+		}
+		& button:hover {
+			color: white;
+			background-color: #01060e;
+			border-radius: 5%;
+			font-size: 30px;
+		}
 	}
 }

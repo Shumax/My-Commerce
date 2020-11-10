@@ -13,9 +13,14 @@ function Topbar() {
         src={Logo}
       />
 
-      <div className="topbar__search">
-        <FiSearch />
-      </div>
+      <nav className="container">
+        <div className="topbar__search">
+          <FiSearch />
+          <input
+            placeholder="O que você está procurando?"
+          />
+        </div>
+      </nav>
 
       <div className="topbar__icons">
         <FiUser />
