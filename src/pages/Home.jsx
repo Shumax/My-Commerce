@@ -3,6 +3,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-const-assign */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import '../styles/pages/Home.scss';
 import banner from '../images/banner.webp';
@@ -32,7 +33,9 @@ function Home() {
           <p>Até 15% Off!</p>
 
           <button>
-            Aproveite
+            <Link to="/catalog">
+              Aproveite
+            </Link>
           </button>
         </div>
 

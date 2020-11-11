@@ -18,43 +18,65 @@
 	
 	&__logo {
 		height: auto;
+		width: auto;
 		max-height: 94px;
+		max-width: 25vw;
 	}
 
 	&__search {
-		background: #fff;
-		max-width: 20rem;
-		height: 2rem;
-		border: 1px solid #8F8A9B;
-		border-radius: 3px;
-		padding: 3px;
-		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		transform: translateX(-5%);
+		margin: 0;
+		padding: 0;
 		
-		& svg {
-			color: #01060e;
-			font-weight: 700;
-			position: absolute;
-			opacity: .7;
-		}
-		& input {
-			width: 80%;
-			border: none;
+
+		&--input {
+			background: #fff;
+		
+			border: 1px solid #8F8A9B;
+			border-radius: 3px;
+			padding: 2px;
+
 			position: relative;
-			left: 28px;
+			
+
+			& input {
+				width: auto;
+				border: none;
+	
+			}
+			& input:focus {
+				box-shadow: 0 0 0 0;
+				border: 0 none;
+				outline: 0;
+			}
 		}
-		& input:focus {
-			box-shadow: 0 0 0 0;
-			border: 0 none;
-			outline: 0;
+		
+		
+		&--button {
+			height: 30px;
+			border-radius: 5px;
+			
+			background-color: #1c1c1c;
+
+			border: none;
+			cursor: pointer;
+
+			& svg {
+				color: #fff;
+			}
+
 		}  
 	}
 
 	&__icons {
-		width: 5rem;
+		width: 80px;
 		max-width: 94px;
 
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 
 		
