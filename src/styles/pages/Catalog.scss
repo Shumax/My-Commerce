@@ -2,5 +2,32 @@
 	max-width: 100%;
 	height: 100vh;
 	top: 95px;
+	margin: 0 auto;
+  padding: 20px;
 	position: relative;
+ 
+
+	column-count: 2;
+	column-gap: 20px;
+	
+	@media (min-width: 50%) {
+		.catalog{
+			 column-count: 3;
+		}
+	}
+
+	&__card {
+		break-inside: avoid;
+		border-top: 3px solid var(--red);
+		border-radius: 3px;
+		background-color: white;
+		margin-bottom: 20px;
+		overflow: hidden;
+		
+		&--image {
+			display: block;
+			width: 100%;
+			object: fit;
+		}
+	}
 }
