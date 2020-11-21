@@ -22,7 +22,7 @@ function Catalog() {
     <>
       <Topbar />
       <div className="catalog">
-        <div className="container">
+        <div className="catalog__content">
           <div className="catalog__card">
             <div className="catalog__card--image">
               <img alt="" src="https://static.zattini.com.br/produtos/sapatilha-moleca-bico-fino-verniz-feminina/06/D98-1516-006/D98-1516-006_zoom2.jpg?ts=1605767776&ims=326x" />
@@ -82,9 +82,8 @@ function Catalog() {
           </div>
 
         </div>
-
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }
