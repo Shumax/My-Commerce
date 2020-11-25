@@ -1,3 +1,6 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable no-tabs */
 /* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 
@@ -13,7 +16,7 @@ function Catalog() {
   useEffect(() => {
     repository.getAll()
       .then((data) => {
-        setProducts(data);
+        setProducts(data.products);
       });
   }, []);
 
@@ -23,105 +26,25 @@ function Catalog() {
       <Topbar />
       <div className="catalog">
         <div className="catalog__content">
-          <div className="catalog__card">
-            <div className="catalog__card--image">
-              <img alt="" src="https://static.zattini.com.br/produtos/sapatilha-moleca-bico-fino-verniz-feminina/06/D98-1516-006/D98-1516-006_zoom2.jpg?ts=1605767776&ims=326x" />
+          {products.map((card, index) => (
+            <div key={index} className="catalog__card">
+              <figure className="catalog__card--image">
+                <img alt={`Foto ${card.name}`} src={card.image} />
+              </figure>
+              <section className="catalog__card--description">
+                <div className="catalog__card--description-title">
+                  {card.name}
+                </div>
+                <div className="catalog__card--description-price">
+                  <span className="catalog__card--description-price text">Por apenas: </span>
+                  <span className="catalog__card--description-price price--actual">
+                    R$
+                    { card.regularPrice}
+                  </span>
+                </div>
+              </section>
             </div>
-            <section className="catalog__card--description">
-              <div className="catalog__card--description-title">
-                Sapatilha Moleca Bico Fino Verniz Feminina
-              </div>
-              <div className="catalog__card--description-price">
-                <span className="catalog__card--description-price text">A partir de: </span>
-                <span className="catalog__card--description-price price--actual">R$34,99</span>
-              </div>
-            </section>
-          </div>
-
-          <div className="catalog__card">
-            <div className="catalog__card--image">
-              <img alt="" src="https://static.zattini.com.br/produtos/sapatilha-moleca-bico-fino-verniz-feminina/06/D98-1516-006/D98-1516-006_zoom2.jpg?ts=1605767776&ims=326x" />
-            </div>
-            <section className="catalog__card--description">
-              <div className="catalog__card--description-title">
-                Sapatilha Moleca Bico Fino Verniz Feminina
-              </div>
-              <div className="catalog__card--description-price">
-                <span className="catalog__card--description-price text">A partir de: </span>
-                <span className="catalog__card--description-price price--actual">R$34,99</span>
-              </div>
-            </section>
-          </div>
-          <div className="catalog__card">
-            <div className="catalog__card--image">
-              <img alt="" src="https://static.zattini.com.br/produtos/sapatilha-moleca-bico-fino-verniz-feminina/06/D98-1516-006/D98-1516-006_zoom2.jpg?ts=1605767776&ims=326x" />
-            </div>
-            <section className="catalog__card--description">
-              <div className="catalog__card--description-title">
-                Sapatilha Moleca Bico Fino Verniz Feminina
-              </div>
-              <div className="catalog__card--description-price">
-                <span className="catalog__card--description-price text">A partir de: </span>
-                <span className="catalog__card--description-price price--actual">R$34,99</span>
-              </div>
-            </section>
-          </div>
-          <div className="catalog__card">
-            <div className="catalog__card--image">
-              <img alt="" src="https://static.zattini.com.br/produtos/sapatilha-moleca-bico-fino-verniz-feminina/06/D98-1516-006/D98-1516-006_zoom2.jpg?ts=1605767776&ims=326x" />
-            </div>
-            <section className="catalog__card--description">
-              <div className="catalog__card--description-title">
-                Sapatilha Moleca Bico Fino Verniz Feminina
-              </div>
-              <div className="catalog__card--description-price">
-                <span className="catalog__card--description-price text">A partir de: </span>
-                <span className="catalog__card--description-price price--actual">R$34,99</span>
-              </div>
-            </section>
-          </div>
-          <div className="catalog__card">
-            <div className="catalog__card--image">
-              <img alt="" src="https://static.zattini.com.br/produtos/sapatilha-moleca-bico-fino-verniz-feminina/06/D98-1516-006/D98-1516-006_zoom2.jpg?ts=1605767776&ims=326x" />
-            </div>
-            <section className="catalog__card--description">
-              <div className="catalog__card--description-title">
-                Sapatilha Moleca Bico Fino Verniz Feminina
-              </div>
-              <div className="catalog__card--description-price">
-                <span className="catalog__card--description-price text">A partir de: </span>
-                <span className="catalog__card--description-price price--actual">R$34,99</span>
-              </div>
-            </section>
-          </div>
-          <div className="catalog__card">
-            <div className="catalog__card--image">
-              <img alt="" src="https://static.zattini.com.br/produtos/sapatilha-moleca-bico-fino-verniz-feminina/06/D98-1516-006/D98-1516-006_zoom2.jpg?ts=1605767776&ims=326x" />
-            </div>
-            <section className="catalog__card--description">
-              <div className="catalog__card--description-title">
-                Sapatilha Moleca Bico Fino Verniz Feminina
-              </div>
-              <div className="catalog__card--description-price">
-                <span className="catalog__card--description-price text">A partir de: </span>
-                <span className="catalog__card--description-price price--actual">R$34,99</span>
-              </div>
-            </section>
-          </div>
-          <div className="catalog__card">
-            <div className="catalog__card--image">
-              <img alt="" src="https://static.zattini.com.br/produtos/sapatilha-moleca-bico-fino-verniz-feminina/06/D98-1516-006/D98-1516-006_zoom2.jpg?ts=1605767776&ims=326x" />
-            </div>
-            <section className="catalog__card--description">
-              <div className="catalog__card--description-title">
-                Sapatilha Moleca Bico Fino Verniz Feminina
-              </div>
-              <div className="catalog__card--description-price">
-                <span className="catalog__card--description-price text">A partir de: </span>
-                <span className="catalog__card--description-price price--actual">R$34,99</span>
-              </div>
-            </section>
-          </div>
+			  ))}
 
         </div>
       </div>
