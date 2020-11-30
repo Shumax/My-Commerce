@@ -1,0 +1,26 @@
+.menu {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+
+	&--item {
+		font-size: 18px;
+		opacity: .7;
+		text-align: center;
+		margin: auto 3% auto 3%;
+		width: 80px;
+		cursor: pointer;
+	}
+	&--item:hover {
+		opacity: .9;
+		font-weight: 700;
+	}
+}
+
+.container {
+	border-bottom: .13rem solid #01060e;
+	height: 45px;
+	position: absolute;
+}

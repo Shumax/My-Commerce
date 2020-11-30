@@ -4,33 +4,11 @@
 	top: 95px;
 	position: relative;
 
-	&__list{
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 
-		&--item {
-			font-size: 18px;
-			opacity: .7;
-			text-align: center;
-			margin: auto 3% auto 3%;
-			width: 80px;
-			cursor: pointer;
-		}
-		&--item:hover {
-			opacity: .9;
-			font-weight: 700;
-		}
-	}
-	.container {
-		border-bottom: .13rem solid #01060e;
-		position: relative;
-		z-index: 0;
-	}
 
 	&__banner {
 		margin: 2px auto;
+		padding-top: 45px;
 		width: 100%;
 		max-height: 370px;
 		background-color: white;
@@ -48,8 +26,7 @@
 
 	&__promo {
 		position: relative;
-		margin-top: 5%;
-		margin-left: 40%;
+		margin: 5% 0 20% 40%;
 
 		display: flex;
 		align-items: center;

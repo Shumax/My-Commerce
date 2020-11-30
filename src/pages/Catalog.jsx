@@ -1,12 +1,10 @@
-/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-mixed-spaces-and-tabs */
-/* eslint-disable no-tabs */
-/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react';
 
 import '../styles/pages/Catalog.scss';
 import Topbar from '../components/Topbar';
 import Footer from '../components/Footer';
+import Menu from '../components/Menu';
 
 import repository from '../services/api/products';
 
@@ -25,6 +23,7 @@ function Catalog() {
     <>
       <Topbar />
       <div className="catalog">
+        <Menu />
         <div className="catalog__content">
           {products.map((card, index) => (
             <div key={index} className="catalog__card">
@@ -45,10 +44,9 @@ function Catalog() {
               </section>
             </div>
 			  ))}
-
-        </div>
+				<Footer />
+        </div>				
       </div>
-      <Footer />
     </>
   );
 }
