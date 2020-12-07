@@ -2,7 +2,7 @@
 import { createActions, createReducer } from 'reduxsauce';
 
 export const { Types, Creators } = createActions({
-	loadProducts: ['products'],
+	fetchAllProducts: ['products'],
 });
 
 const initialState = {
@@ -14,7 +14,7 @@ const load = (state = initialState, action) => ({
 	products: action.products,
 });
 
-const handlers = {
+export const handlers = {
 	[Types.FETCH_ALL_PRODUCTS]: load,
 }
 

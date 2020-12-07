@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchAllProducts } from '../store/middleware';
+import { loadProducts } from '../store/middleware';
 
 import '../styles/pages/Catalog.scss';
 import Topbar from '../components/Topbar';
@@ -14,9 +14,9 @@ function Catalog() {
 	const dispatch = useDispatch();
 	const products = useSelector(state => state.products.products);
 
-	useEffect(
-		dispatch(fetchAllProducts())
-	),[dispatch];
+	useEffect(function fetchAll() {
+		dispatch(loadProducts())
+	},[dispatch]);
 
   console.log(products);
   return (
@@ -25,7 +25,7 @@ function Catalog() {
       <div className="catalog">
         <Menu />
         <div className="catalog__content">
-          {products.map((card, index) => (
+          {products.products.map((card, index) => (
             <div key={index} className="catalog__card">
               <figure className="catalog__card--image">
                 <img alt={`Foto ${card.name}`} src={card.image} />

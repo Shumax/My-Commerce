@@ -3,14 +3,14 @@ import { Creators as ProductsCreator } from '../ducks/products';
 import api from '../../services/api/products';
 
 const {
-	loadProducts,
+	fetchAllProducts,
 } = ProductsCreator;
 
-export const fetchAllProducts = () => (dispatch) => {
+export const loadProducts = () => (dispatch) => {
 	api.getAll()
 		.then(
 			(response) => {
-				dispatch(loadProducts(response));
+				dispatch(fetchAllProducts(response));
 			},
 		);
 };

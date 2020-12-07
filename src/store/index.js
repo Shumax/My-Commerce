@@ -1,10 +1,16 @@
 import { applyMiddleware, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
+import storage from 'redux-persist/lib/storage/session';
 
 import reducers from './ducks';
 
-const persistedReducer = persistReducer(reducers);
+const persistConfig = {
+  key: 'My-Commerce',
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, reducers);
 
 const store = createStore(
 	persistedReducer,
