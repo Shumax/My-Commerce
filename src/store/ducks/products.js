@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { createActions, createReducer } from 'reduxsauce';
 
-const { Types, Creators } = createActions({
-	loadProducts: ['loadProducts'],
+export const { Types, Creators } = createActions({
+	loadProducts: ['products'],
 });
 
 const initialState = {
@@ -11,11 +11,11 @@ const initialState = {
 
 const load = (state = initialState, action) => ({
 	...state,
-	products: action.loadProducts,
+	products: action.products,
 });
 
 const handlers = {
-	[Types.fetchAll]: load,
+	[Types.FETCH_ALL_PRODUCTS]: load,
 }
 
 export default createReducer(initialState, handlers);

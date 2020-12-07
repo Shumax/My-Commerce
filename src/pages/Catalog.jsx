@@ -1,22 +1,22 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-mixed-spaces-and-tabs */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { fetchAllProducts } from '../store/middleware';
 
 import '../styles/pages/Catalog.scss';
 import Topbar from '../components/Topbar';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 
-import repository from '../services/api/products';
-
 function Catalog() {
-  const [products, setProducts] = useState([]);
+	const dispatch = useDispatch();
+	const products = useSelector(state => state.products.products);
 
-  useEffect(() => {
-    repository.getAll()
-      .then((data) => {
-        setProducts(data.products);
-      });
-  }, []);
+	useEffect(
+		dispatch(fetchAllProducts())
+	),[dispatch];
 
   console.log(products);
   return (
