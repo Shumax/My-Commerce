@@ -20,7 +20,26 @@ function getAll() {
       },
     );
 }
+function getByCategory(category) {
+  return fetch(`${URL}/catalog?category=${category}`, {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  })
+    .then(
+      async (response) => {
+        if (response.ok) {
+          const products = await response.json();
+          return products;
+        }
+        const status = await response.status;
+        return status;
+      },
+    );
+}
 
 export default {
-  getAll,
+	getAll,
+	getByCategory
 };

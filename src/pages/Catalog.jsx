@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,9 +13,11 @@ function Catalog() {
 	const dispatch = useDispatch();
 	const products = useSelector(state => state.products.products);
 
-	useEffect(function fetchAll() {
-		dispatch(loadProducts())
-	},[dispatch]);
+	useEffect(
+		function fetchAll() {
+			dispatch(loadProducts);
+		},
+	[dispatch]);
 
   console.log(products);
   return (

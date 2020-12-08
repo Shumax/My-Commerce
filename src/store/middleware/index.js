@@ -4,6 +4,7 @@ import api from '../../services/api/products';
 
 const {
 	fetchAllProducts,
+	fetchByCategory,
 } = ProductsCreator;
 
 export const loadProducts = () => (dispatch) => {
@@ -11,6 +12,14 @@ export const loadProducts = () => (dispatch) => {
 		.then(
 			(response) => {
 				dispatch(fetchAllProducts(response));
+			},
+		);
+};
+export const loadByCategory = (category) => (dispatch) => {
+	api.getByCategory(category)
+		.then(
+			(response) => {
+				dispatch(fetchByCategory(response));
 			},
 		);
 };
