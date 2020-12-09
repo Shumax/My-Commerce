@@ -1,32 +1,35 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { loadProducts } from '../store/middleware';
+import { filterProducts } from '../store/middleware/products';
 
 import '../styles/pages/Catalog.scss';
 import Topbar from '../components/Topbar';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
+import Loading from '../components/Loading';
 
 function Catalog() {
 	const dispatch = useDispatch();
-	const products = useSelector(state => state.products.products);
+	const products = useSelector(state => state.products.products.products);
+	const filter = useSelector(state => state.products.productsFiltered)
 
-	useEffect(
-		function fetchAll() {
-			dispatch(loadProducts);
-		},
-	[dispatch]);
+	console.log(products);
+	// const filter = products.filter(category => category.category.includes('T-SHIRT'));
+	dispatch(filterProducts(products, 'PANTS'))
+	console.log(filter)
 
-  console.log(products);
   return (
     <>
       <Topbar />
       <div className="catalog">
         <Menu />
         <div className="catalog__content">
-          {products.products.map((card, index) => (
+					{!products.length ? (
+						<Loading />
+					):(
+					products.map((card, index) => (
             <div key={index} className="catalog__card">
               <figure className="catalog__card--image">
                 <img alt={`Foto ${card.name}`} src={card.image} />
@@ -44,7 +47,7 @@ function Catalog() {
                 </div>
               </section>
             </div>
-			  ))}
+			  	)))}
 				<Footer />
         </div>				
       </div>

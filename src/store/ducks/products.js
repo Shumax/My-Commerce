@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { createActions, createReducer } from 'reduxsauce';
+import products from '../../services/api/products';
 
 export const { Types, Creators } = createActions({
 	fetchAllProducts: ['products'],
-	fetchByCategory: ['productsByCategory'],
+	filterByCategory: ['category'],
 });
 
 const initialState = {
 	products: [],
-	productsByCategory: [],
+	productsFiltered: [],
 };
 
 const load = (state = initialState, action) => ({
@@ -18,12 +19,12 @@ const load = (state = initialState, action) => ({
 
 const filter = (state = initialState, action) => ({
 	...state,
-	productsByCategory: action.productsByCategory,
+	productsFiltered: action.products.filter(category => category.category.includes(action.category)),
 });
 
 export const handlers = {
 	[Types.FETCH_ALL_PRODUCTS]: load,
-	[Types.FETCH_BY_CATEGORY]: filter,
+	[Types.FILTER_BY_CATEGORY]: filter,
 }
 
 export default createReducer(initialState, handlers);

@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import { loadProducts } from '../store/middleware/products';
 
 import '../styles/pages/Home.scss';
 import banner from '../images/banner.webp';
@@ -9,6 +12,13 @@ import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 
 function Home() {
+	const dispatch = useDispatch();
+	
+	useEffect(
+		async function fetchAll() {
+			await dispatch(loadProducts());
+		},
+	[dispatch]);
   return (
     <>
       <Topbar />
