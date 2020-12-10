@@ -4,7 +4,7 @@ import products from '../../services/api/products';
 
 export const { Types, Creators } = createActions({
 	fetchAllProducts: ['products'],
-	filterByCategory: ['category'],
+	filterByCategory: ['productsByCategory'],
 });
 
 const initialState = {
@@ -19,7 +19,7 @@ const load = (state = initialState, action) => ({
 
 const filter = (state = initialState, action) => ({
 	...state,
-	productsFiltered: action.products.filter(category => category.category.includes(action.category)),
+	productsFiltered: action.productsByCategory,
 });
 
 export const handlers = {

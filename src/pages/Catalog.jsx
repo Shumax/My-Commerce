@@ -13,11 +13,12 @@ import Loading from '../components/Loading';
 function Catalog() {
 	const dispatch = useDispatch();
 	const products = useSelector(state => state.products.products.products);
-	const filter = useSelector(state => state.products.productsFiltered)
+	
 
 	console.log(products);
 	// const filter = products.filter(category => category.category.includes('T-SHIRT'));
-	dispatch(filterProducts(products, 'PANTS'))
+	dispatch(filterProducts(products, 'BAGS'))
+	const filter = useSelector(state => state.products.productsFiltered)
 	console.log(filter)
 
   return (
