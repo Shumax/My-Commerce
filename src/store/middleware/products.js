@@ -17,6 +17,6 @@ export const loadProducts = () => (dispatch) => {
 };
 export const filterProducts = (products, category) => (dispatch) => {
 	const filter = products.filter(cat => cat.category.includes(category));
-	console.log(filter)
+
 	dispatch(filterByCategory(filter));
 };
