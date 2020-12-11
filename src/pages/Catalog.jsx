@@ -9,6 +9,7 @@ import Topbar from '../components/Topbar';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
 import Cards from '../components/Cards';
+import Loading from '../components/Loading';
 
 function Catalog() {
 	//const dispatch = useDispatch();
@@ -26,7 +27,13 @@ function Catalog() {
       <div className="catalog">
         <Menu />
         <div className="catalog__content">
-					<Cards cards={products}/>
+					{
+						!products.length ? (
+							<Loading />
+						):(
+							<Cards cards={products}/>
+						) 
+					}
 				<Footer />
         </div>				
       </div>

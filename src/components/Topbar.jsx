@@ -29,7 +29,16 @@ function Topbar() {
       </nav>
 
       <div className="topbar__icons">
-        <FiUser />
+        <div className='topbar__icons--user'>
+					<FiUser />
+					<div className='topbar__icons--user-content'>
+						<ul>
+							<li>Login</li>
+						</ul>
+					</div>
+				</div>
+				
+
         <FiShoppingBag />
       </div>
 
