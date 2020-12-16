@@ -34,12 +34,20 @@ function Topbar() {
 					<div className='topbar__icons--user-content'>
 						<ul>
 							<li>Login</li>
+							<li>Pedidos</li>
 						</ul>
 					</div>
 				</div>
 				
-
-        <FiShoppingBag />
+				<div className='topbar__icons--cart'>
+					<FiShoppingBag />
+					<div className='topbar__icons--cart-content'>
+						<div className='topbar__icons--cart-content-inside'	>
+							Seu carrinho está vazio!
+						</div>
+					</div>
+				</div>
+        
       </div>
 
     </header>
