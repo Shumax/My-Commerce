@@ -1,13 +1,20 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { singleCard } from '../store/middleware/products';
+
+import SingleCard from './SingleCard';
 
 export default function Cards(props) {
-	console.log(props)
-	
+	const dispatch = useDispatch();
+	const productSelected = useSelector(state => state.products.productSelected);
 	return (
 		<>
+		{ productSelected && <SingleCard /> }
 			{props.cards.map((card, index) => (
-				<div key={index} className="catalog__card">
+				<div key={index} className="catalog__card"
+					onClick={() => dispatch(singleCard(card))}
+				>
 					<figure className="catalog__card--image">
 						<img alt={`Foto ${card.name}`} src={card.image} />
 					</figure>
