@@ -7,10 +7,11 @@ import SingleCard from './SingleCard';
 
 export default function Cards(props) {
 	const dispatch = useDispatch();
-	const productSelected = useSelector(state => state.products.productSelected);
+	const showSelected = useSelector(state => state.handle.showSingleCard);
+	console.log(showSelected)
 	return (
 		<>
-		{ productSelected && <SingleCard /> }
+		{showSelected && <SingleCard /> }
 			{props.cards.map((card, index) => (
 				<div key={index} className="catalog__card"
 					onClick={() => dispatch(singleCard(card))}

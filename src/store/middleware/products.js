@@ -1,4 +1,5 @@
 import { Creators as ProductsCreator } from '../ducks/products';
+import { Creators as HandleCreator } from '../ducks/handle';
 
 import api from '../../services/api/products';
 
@@ -7,6 +8,8 @@ const {
 	filterByCategory,
 	singleProduct,
 } = ProductsCreator;
+
+const { toggleSingleCard } = HandleCreator;
 
 export const loadProducts = () => (dispatch) => {
 	api.getAll()
@@ -22,5 +25,8 @@ export const filterProducts = (products, category) => (dispatch) => {
 	dispatch(filterByCategory(filter));
 };
 export const singleCard = (product) => (dispatch) => {
-	dispatch(singleProduct(product));
+	dispatch(
+		singleProduct(product),
+		toggleSingleCard(),
+	);
 };
